@@ -13,8 +13,9 @@
 2. **DNS Zone 이름**과 **설명**을 입력하고, VPC를 선택하고 **확인** 버튼을 클릭합니다.  
 
     - **DNS Zone 이름**에 사용자가 소유한 도메인 또는 하위 도메인을 [FQDN(fully qualified domain name)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)으로 입력합니다.
-    - **DNS Zone 이름**은 VPC에서 유일해야 합니다.
-    - 생성이 완료되면 VM 인스턴스를 재시작해야 합니다. 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](./console-guide/#_1)에서 확인할 수 있습니다. 
+    - **DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
+    - 생성이 완료되면 Private DNS 서비스를 이용하기 위해 VM 인스턴스를 재시작해야 합니다.
+    - 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](./console-guide/#_1)에서 확인할 수 있습니다. 
         - 운영 중인 도메인의 하위 도메인으로 생성한 경우 운영 중인 도메인에 NS 레코드 세트를 하위 도메인 이름과 해당 네임 서버로 생성해야 합니다.
 
 
