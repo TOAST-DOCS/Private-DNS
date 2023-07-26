@@ -9,7 +9,8 @@
 2. **Private DNS Zone 이름**과 **설명**을 입력하고, VPC를 선택하여 **확인** 버튼을 클릭합니다.  
 
     - **Private DNS Zone 이름**에 사용자가 소유한 도메인 또는 하위 도메인을 [FQDN(fully qualified domain name)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)으로 입력합니다.
-    - **Private DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
+   - **Private DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
+    - 여러 개의 VPC를 선택할 수 있습니다. 화면 우측 **+** 버튼을 클릭해 VPC를 추가할 수 있으며, 추가된 VPC의 **-** 버튼을 클릭해 VPC를 제거할 수 있습니다.
     - Private DNS Zone의 VPC 최소 연결 개수는 1개이며 최대 연결 개수는 제한이 없습니다.
     - 생성이 완료되면 Private DNS 서비스를 이용하기 위해 VM 인스턴스를 재시작해야 합니다.
     - 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](./console-guide/#_1)에서 확인할 수 있습니다.
@@ -24,7 +25,7 @@
 
 3. **설명**을 수정하고, **확인** 버튼을 클릭합니다.
 
-### DNS Zone 삭제
+### Private DNS Zone 삭제
 
 1. 삭제할 DNS Zone을 모두 선택한 후, **DNS Zone 삭제** 버튼을 클릭합니다.
 
