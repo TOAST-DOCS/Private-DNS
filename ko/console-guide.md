@@ -1,7 +1,5 @@
 ## Network > Private DNS > 콘솔 사용 가이드
 
-여기에서는 콘솔에서 Private DNS Zone과 레코드 세트를 관리하는 방법을 설명합니다.
-
 ### Private DNS Zone 생성
 
 1. Private DNS Zone은 레코드 세트의 컨테이너로 Private DNS가 서비스하는 호스트에 대한 도메인 영역이며, **Private DNS Zone 생성** 버튼을 클릭하여 생성합니다.
@@ -9,12 +7,31 @@
 2. **Private DNS Zone 이름**과 **설명**을 입력하고, VPC를 선택하여 **확인** 버튼을 클릭합니다.  
 
     - **Private DNS Zone 이름**에 사용자가 소유한 도메인 또는 하위 도메인을 [FQDN(fully qualified domain name)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)으로 입력합니다.
-   - **Private DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
+    - **Private DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
     - 여러 개의 VPC를 선택할 수 있습니다. 화면 우측 **+** 버튼을 클릭해 VPC를 추가할 수 있으며, 추가된 VPC의 **-** 버튼을 클릭해 VPC를 제거할 수 있습니다.
     - Private DNS Zone의 VPC 최소 연결 개수는 1개이며 최대 연결 개수는 제한이 없습니다.
-    - 생성이 완료되면 Private DNS 서비스를 이용하기 위해 VM 인스턴스를 재시작해야 합니다.
+    - 생성이 완료되면 Private DNS 서비스를 이용하기 위해 연결된 VPC의 인스턴스들을 재시작해야 합니다.
     - 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](./console-guide/#_1)에서 확인할 수 있습니다.
+    - 한 개 이상의 Zone에 연결된 VPC는 프라이빗 IP DNS 설정을 하지 않더라도 프라이빗 IP DNS를 사용할 수 있습니다.
 
+
+> [참고] 프라이빗 DNS 포트
+> * 프라이빗 IP DNS를 설정하거나 VPC를 최초로 Zone에 연결하게 되면 VPC 내에 프라이빗 DNS 포트가 생성됩니다.
+> * 프라이빗 IP DNS를 설정하지 않으면서 모든 Zone에 연결이 해지된 VPC는 프라이빗 DNS 포트가 삭제됩니다.
+> * 프라이빗 IP DNS를 설정하지 않으면서 모든 Zone에 연결을 해지한 후 다시 연결한 VPC는 프라이빗 DNS 포트가 변경 될 수 있습니다.
+> * 프라이빗 DNS 포트가 생성/변경/삭제되는 경우, 이를 적용하기 위해서 인스턴스 재시작이 필요합니다.
+> * 프라이빗 DNS 포트의 적용을 위해 인스턴스를 재시작 했다면, 이후 해당 VPC에 추가적으로 다른 Zone를 연결하거나 프라이빗 IP DNS설정을 변경해도 인스턴스 재시작을 하지 않아도 됩니다.
+
+> [참고] 인스턴스 재시작이 필요한 경우
+> * VPC에 프라이빗 IP DNS를 설정하거나 최초로 Zone 에 연결한 경우
+> * Zone 에 연결되지 않은 VPC의 프라이빗 IP DNS 설정을 변경하는 경우
+> * VPC에 프라이빗 IP DNS를 설정하지 않으면서 VPC의 모든 Zone 연결을 해지하여 더이상 Private DNS를 사용하지 않는 경우
+> * VPC에 프라이빗 IP DNS를 설정하지 않으면서 VPC의 모든 Zone 연결을 해지했다가 다시 연결하는 경우
+
+> [주의 사항] 두 개 이상의 다른 VPC 포트를 가진 인스턴스
+> * 두 개 이상의 다른 VPC 포트를 가진 인스턴스는 Private DNS 동작을 보장할 수 없습니다.
+> * 두 포트 중 하나의 VPC에 설정된 Private DNS만 동작할 수 있습니다.
+> * Private DNS 기능을 사용하려는 VPC 포트를 인스턴스의 eth0으로 설정하지 않으면, 라우팅 우선 순위에 따라서 DNS 응답을 받지 못할 수 있습니다.
 
 ### Private DNS Zone 수정
 
@@ -58,7 +75,7 @@
 
 5. 레코드 세트 생성 개수는 제한되어 있으며 연장이 필요하면 별도로 문의해 주시기 바랍니다. 
 
-    - 문의처: [1:1 문의](https://www.toast.com/kr/support/inquiry?alias=tab3_02)
+    - 문의처: [1:1 문의](https://www.nhncloud.com/kr/support/inquiry?alias=tab3_02)
 
 ### 레코드 세트 대량 생성
 
