@@ -1,5 +1,6 @@
 ## Network > Private DNS > Overview
 
+
 Private DNS allows you to configure independent DNS per VPC. You can make DNS service accessible to instances within a VPC by configuring the settings in the web console, without separate DNS solutions or servers.
 
 ## Main Features
