@@ -79,7 +79,7 @@
 
 5. 레코드 세트 생성 개수는 제한되어 있으며 연장이 필요한 경우 별도로 문의해 주시기 바랍니다. 
 
-    - 문의처: 고객 센터 > [1:1 문의](https://www.nhncloud.com/kr/support/inquiry)
+    - 문의처: 고객 센터 > [1:1 문의](https://www.ngsc.go.kr/kr/support/inquiry)
 
 ### 레코드 세트 대량 생성
 
