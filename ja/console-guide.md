@@ -6,7 +6,7 @@
 
 2. **Private DNS Zone名**と**説明**を入力し、VPCを選択して**確認**ボタンをクリックします。 
 
-    - **Private DNS Zone名**にユーザーが所有しているドメインまたはサブドメインを[FQDN(full qualified domain name)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)に入力します。
+    - **Private DNS Zone名**にユーザーが所有しているドメインまたはサブドメインをFQDN(full qualified domain name)に入力します。
     - **Private DNS Zone名**は、接続されたVPC内で唯一でなければなりません。
     - 複数のVPCを選択できます。画面右側の**+**ボタンをクリックしてVPCを追加することができ、追加したVPCの**-**ボタンをクリックしてVPCを削除できます。
     - Private DNS ZoneのVPCの最小接続数は1つで、最大接続数は制限がありません。
@@ -64,7 +64,7 @@
 
 2. レコードセット情報を入力します。
 
-    - レコードセット名：サービスするホスト名で**Private DNS Zone名**またはサブネームになるように[FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)で入力します。
+    - レコードセット名：サービスするホスト名で**Private DNS Zone名**またはサブネームになるようにFQDN(fully qualified domain name)で入力します。
     - レコードセットタイプ: ホストのタイプで、使用目的に応じてタイプを選択します。
     - TTL(秒)： Time to liveで、データの有効期間を表します。ネームサーバからのレコードセット情報の更新周期を秒単位で入力します。右側のボタンをクリックして簡単に入力できます。
     - 説明：レコードセットの説明を記述します。
@@ -78,7 +78,7 @@
 
 5. レコードセットの作成数は制限されており、延長が必要な場合は別途お問い合わせください。
 
-    - お問い合わせ先：[1:1お問い合わせ](https://www.nhncloud.com/kr/support/inquiry?alias=tab3_02)
+    - お問い合わせ先：[1:1お問い合わせ](/support/inquiry)
 
 ### レコードセット大量作成
 
