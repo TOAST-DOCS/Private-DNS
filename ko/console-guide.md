@@ -6,7 +6,7 @@
 
 2. **Private DNS Zone 이름**과 **설명**을 입력하고, VPC를 선택하여 **확인** 버튼을 클릭합니다.  
 
-    - **Private DNS Zone 이름**에 사용자가 소유한 도메인 또는 하위 도메인을 [FQDN(fully qualified domain name)](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)으로 입력합니다.
+    - **Private DNS Zone 이름**에 사용자가 소유한 도메인 또는 하위 도메인을 FQDN(fully qualified domain name)으로 입력합니다.
     - **Private DNS Zone 이름**은 연결된 VPC 내에서 유일해야 합니다.
     - 여러 개의 VPC를 선택할 수 있습니다. 화면 우측 **+** 버튼을 클릭해 VPC를 추가할 수 있으며, 추가된 VPC의 **-** 버튼을 클릭해 VPC를 제거할 수 있습니다.
     - Private DNS Zone의 VPC 최소 연결 개수는 1개이며 최대 연결 개수는 제한이 없습니다.
@@ -65,7 +65,7 @@
 
 2. 레코드 세트 정보를 입력합니다.
 
-    - 레코드 세트 이름: 서비스할 호스트 이름으로 **Private DNS Zone 이름** 또는 하위 이름이 될 수 있도록 [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)으로 입력합니다.
+    - 레코드 세트 이름: 서비스할 호스트 이름으로 **Private DNS Zone 이름** 또는 하위 이름이 될 수 있도록 FQDN(fully qualified domain name)으로 입력합니다.
     - 레코드 세트 타입: 호스트의 유형으로 사용 목적에 따라 유형을 선택합니다.
     - TTL(초): Time to live로 데이터의 유효 기간을 나타냅니다. 네임 서버에서 레코드 세트 정보의 갱신 주기를 초 단위로 입력합니다. 우측 버튼을 클릭하여 간단하게 입력할 수 있습니다.
     - 설명: 레코드 세트에 대한 설명을 기술합니다.
@@ -79,7 +79,7 @@
 
 5. 레코드 세트 생성 개수는 제한되어 있으며 연장이 필요한 경우 별도로 문의해 주시기 바랍니다. 
 
-    - 문의처: 고객 센터 > [1:1 문의](https://www.nhncloud.com/kr/support/inquiry?alias=tab3_02)
+    - 문의처: 고객 센터 > [1:1 문의](/support/inquiry)
 
 ### 레코드 세트 대량 생성
 
