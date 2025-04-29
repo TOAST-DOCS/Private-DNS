@@ -15,7 +15,7 @@ API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니
 ### Private DNS Zone 목록 보기
 
 ```
-GET /v2.0/privatednz/zones 
+GET /v2.0/privatedns/zones 
 X-Auth-Token: {tokenId} 
 ```
 
@@ -239,7 +239,7 @@ X-Auth-Token: {tokenId}
 ### Private DNS Zone 삭제하기
 
 ```
-PUT /v2.0/privatedns/zones/{zoneId}
+DELETE /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
