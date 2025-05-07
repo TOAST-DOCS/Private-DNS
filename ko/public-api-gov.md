@@ -1,4 +1,4 @@
-## Network > Load Balancer > API v2 가이드
+## Network > Private DNS > API v2 가이드
 
 API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
 
@@ -16,7 +16,7 @@ API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니
 ### Private DNS Zone 목록 보기
 
 ```
-GET /v2.0/privatednz/zones 
+GET /v2.0/privatedns/zones 
 X-Auth-Token: {tokenId} 
 ```
 
@@ -240,7 +240,7 @@ X-Auth-Token: {tokenId}
 ### Private DNS Zone 삭제하기
 
 ```
-PUT /v2.0/privatedns/zones/{zoneId}
+DELETE /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
