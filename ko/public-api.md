@@ -293,7 +293,7 @@ X-Auth-Token: {tokenId}
 | rrsets.ttl             | Body | Integer | 레코드 세트 ttl                                                                             |
 | rrsets.type            | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
  | rrsets.records         | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrsets.records.content | Body | Array   | 레코드 세트 레코드값                                                                            |
+| rrsets.records.content | Body | String  | 레코드 세트 레코드값                                                                            |
 | rrsets.created_at      | Body | Date    | 레코드 세트 생성한 시간                                                                          |
 | rrsets.updated_at      | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
