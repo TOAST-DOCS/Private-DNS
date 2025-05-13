@@ -259,7 +259,6 @@ X-Auth-Token: {tokenId}
 
 <br>
 <br>
-<br>
 
 ## 레코드 세트 
 ### 레코드 세트 목록 보기
