@@ -344,17 +344,17 @@ X-Auth-Token: {tokenId}
 
 #### 응답
 
-| 이름             | 종류 | 형식      | 설명                                                                                      |
-|----------------| --- |---------|-----------------------------------------------------------------------------------------|
-| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                            |
+| 이름             | 종류 | 형식      | 설명                                                                                     |
+|----------------| --- |---------|----------------------------------------------------------------------------------------|
+| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                           |
 | rrset.id       | Body | UUID    | 레코드 세트 ID                                                                              |
 | rrset.name     | Body | String  | 레코드 세트 이름                                                                              |
 | rrset.description | Body | String  | 레코드 세트 설명                                                                              |
-| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                          |
-| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
+| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                         |
+| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                            |
 | rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
- | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                            |
+ | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                   |
+| rrset.records.content | Body | String  | 레코드 값                                                                                  |
 | rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                          |
 | rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
@@ -398,7 +398,7 @@ X-Auth-Token: {tokenId}
 | zoneId                | URL | UUID    | O | Private DNS Zone ID                                                                     |
 | rrset                 | Body | Object  | O   | 레코드 세트 정보 객체                                                                            |
 | rrset.name            | Body | String  | O   | 레코드 세트 이름                                                                               |
-| rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록                                                                          |
+| rrset.records         | Body | Array   | O   | 레코드 세트에 속한 레코드 객체 목록                                                                          |
 | rrset.records.content | Body | String  | O   | 레코드 값                                                                                   |
 | rrset.ttl             | Body | Integer | -   | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
 | rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
@@ -431,17 +431,17 @@ X-Auth-Token: {tokenId}
 
 #### 응답
 
-| 이름             | 종류 | 형식      | 설명                                                                                      |
-|----------------| --- |---------|-----------------------------------------------------------------------------------------|
-| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                            |
+| 이름             | 종류 | 형식      | 설명                                                                                     |
+|----------------| --- |---------|----------------------------------------------------------------------------------------|
+| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                           |
 | rrset.id       | Body | UUID    | 레코드 세트 ID                                                                              |
 | rrset.name     | Body | String  | 레코드 세트 이름                                                                              |
 | rrset.description | Body | String  | 레코드 세트 설명                                                                              |
-| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                          |
-| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
+| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                         |
+| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                            |
 | rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
- | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                            |
+ | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                   |
+| rrset.records.content | Body | String  | 레코드 값                                                                                  |
 | rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                          |
 | rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
@@ -488,7 +488,7 @@ X-Auth-Token: {tokenId}
 | zoneId                | URL | UUID    | O | Private DNS Zone ID                                                                    |
 | rrsetId                | URL | UUID    | O | 수정할 레코드 세트 ID                                                          |
 | rrset                 | Body | Object  | O   | 레코드 세트 정보 객체                                                                           |
-| rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록                                                                         |
+| rrset.records         | Body | Array   | O   | 레코드 세트에 속한 레코드 객체 목록                                                                         |
 | rrset.records.content | Body | String  | O   | 레코드 값                                                                                  |
 | rrset.ttl             | Body | Integer | -   | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                            |
 | rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
@@ -515,19 +515,19 @@ X-Auth-Token: {tokenId}
 
 #### 응답
 
-| 이름             | 종류 | 형식      | 설명                                                                                 |
-|----------------| --- |---------|------------------------------------------------------------------------------------|
-| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                       |
-| rrset.id       | Body | UUID    | 레코드 세트 ID                                                                          |
-| rrset.name     | Body | String  | 레코드 세트 이름                                                                          |
-| rrset.description | Body | String  | 레코드 세트 설명                                                                          |
-| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                     |
-| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                         |
+| 이름             | 종류 | 형식      | 설명                                                                                     |
+|----------------| --- |---------|----------------------------------------------------------------------------------------|
+| rrset          | Body | Array   | 레코드 세트 객체 목록                                                                           |
+| rrset.id       | Body | UUID    | 레코드 세트 ID                                                                              |
+| rrset.name     | Body | String  | 레코드 세트 이름                                                                              |
+| rrset.description | Body | String  | 레코드 세트 설명                                                                              |
+| rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                         |
+| rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                            |
 | rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
- | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                               |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                        |
-| rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                     |
-| rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                     |
+ | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                   |
+| rrset.records.content | Body | String  | 레코드 값                                                                                  |
+| rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                          |
+| rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
 <details>
   <summary>예시</summary>
