@@ -485,7 +485,7 @@ X-Auth-Token: {tokenId}
 | zoneId                | URL | UUID    | O | Private DNS Zone ID                                                                   |
 | rrsetId                | URL | UUID    | O | 수정할 레코드 세트 ID                                                                         |
 | rrset                 | Body | Object  | O   | 레코드 세트 정보 객체                                                                          |
-| rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록 <br> 레코드를 변경하는 경우, 기존 값은 모두 제거되고 변경 요청한 레코드로 적용됨                        |
+| rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록 <br> 레코드 목록을 변경하는 경우, 기존 값은 모두 제거되고 변경 요청한 레코드로 적용됨                        |
 | rrset.records.content | Body | String  | O   | 레코드 값                                                                                 |
 | rrset.ttl             | Body | Integer | -   | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                           |
 | rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
