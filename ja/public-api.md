@@ -1,6 +1,6 @@
 ## Network > Private DNS > API v2ガイド
 
-APIを使用するにはAPIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ko/identity-api/)を参考にしてAPI使用に必要な情報を準備します。
+APIを使用するにはAPIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ja/identity-api/)を参考にしてAPI使用に必要な情報を準備します。
 
 Private DNS Zoneとレコードセットは`network`タイプエンドポイントを利用します。正確なエンドポイントはトークン発行レスポンスの`serviceCatalog`を参照します。
 
