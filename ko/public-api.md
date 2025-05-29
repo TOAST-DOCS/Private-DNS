@@ -32,17 +32,17 @@ X-Auth-Token: {tokenId}
 
 #### 응답
 
-| 이름                | 종류 | 형식      | 설명                              |
-|-------------------| --- |---------|---------------------------------|
-| zones             | Body | Array   | Private DNS Zone 객체 목록          |
-| zones.id          | Body | UUID    | Private DNS Zone ID            |
-| zones.name        | Body | String  | Private DNS Zone 이름            |
-| zones.description | Body | String  | Private DNS Zone 설명            |
-| zones.status      | Body | String  | Private DNS Zone 상태            |
- | zones.networks    | Body | Array   | Private DNS Zone에 속한 Network 목록 |
-| zones.created_at  | Body | Date    | Private DNS Zone 생성한 시간        |
-| zones.updated_at  | Body | Date    | Private DNS Zone 수정한 시간        |
-| zones.rrset_count | Body | Integer | Private DNS Zone가 가진 레코드 세트 개수 |
+| 이름                | 종류 | 형식      | 설명                           |
+|-------------------| --- |---------|------------------------------|
+| zones             | Body | Array   | Private DNS Zone 객체 목록       |
+| zones.id          | Body | UUID    | Private DNS Zone ID          |
+| zones.name        | Body | String  | Private DNS Zone 이름          |
+| zones.description | Body | String  | Private DNS Zone 설명          |
+| zones.status      | Body | String  | Private DNS Zone 상태          |
+ | zones.networks    | Body | Array   | Private DNS Zone에 속한 네트워크 목록 |
+| zones.created_at  | Body | Date    | Private DNS Zone 생성한 시간      |
+| zones.updated_at  | Body | Date    | Private DNS Zone 수정한 시간      |
+| zones.rrset_count | Body | Integer | Private DNS Zone의 레코드 세트 개수  |
 
 <details>
   <summary>예시</summary> 
@@ -94,10 +94,10 @@ X-Auth-Token: {tokenId}
 | zones.name        | Body | String  | Private DNS Zone 이름            |
 | zones.description | Body | String  | Private DNS Zone 설명            |
 | zones.status      | Body | String  | Private DNS Zone 상태            |
- | zones.networks    | Body | Array   | Private DNS Zone 사용하는 Network UUID 목록 |
+ | zones.networks    | Body | Array   | Private DNS Zone에 속한 네트워크 목록 |
 | zones.created_at  | Body | Date    | Private DNS Zone 생성한 시간        |
 | zones.updated_at  | Body | Date    | Private DNS Zone 수정한 시간        |
-| zones.rrset_count | Body | Integer | Private DNS Zone가 가진 레코드 세트 개수 |
+| zones.rrset_count | Body | Integer | Private DNS Zone의 레코드 세트 개수 |
 
 ### Private DNS Zone 생성하기
 
@@ -280,19 +280,19 @@ X-Auth-Token: {tokenId}
 
 #### 응답
 
-| 이름                     | 종류 | 형식      | 설명                                                                                      |
-|------------------------| --- |---------|-----------------------------------------------------------------------------------------|
-| rrsets                 | Body | Array   | 레코드 세트 객체 목록                                                                            |
-| rrsets.id              | Body | UUID    | 레코드 세트 ID                                                                              |
-| rrsets.name            | Body | String  | 레코드 세트 이름                                                                              |
-| rrsets.description     | Body | String  | 레코드 세트 설명                                                                              |
-| rrsets.zone_id         | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                          |
-| rrsets.ttl             | Body | Integer | 레코드 세트 ttl                                                                             |
-| rrsets.type            | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
- | rrsets.records         | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrsets.records.content | Body | String  | 레코드 세트 레코드값                                                                            |
-| rrsets.created_at      | Body | Date    | 레코드 세트 생성한 시간                                                                          |
-| rrsets.updated_at      | Body | Date    | 레코드 세트 수정한 시간                                                                          |
+| 이름                     | 종류 | 형식      | 설명                                                                                              |
+|------------------------| --- |---------|-------------------------------------------------------------------------------------------------|
+| rrsets                 | Body | Array   | 레코드 세트 객체 목록                                                                                    |
+| rrsets.id              | Body | UUID    | 레코드 세트 ID                                                                                       |
+| rrsets.name            | Body | String  | 레코드 세트 이름                                                                                       |
+| rrsets.description     | Body | String  | 레코드 세트 설명                                                                                       |
+| rrsets.zone_id         | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                                  |
+| rrsets.ttl             | Body | Integer | 레코드 세트 ttl                                                                                      |
+| rrsets.type            | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
+ | rrsets.records         | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                            |
+| rrsets.records.content | Body | String  | 레코드 세트 레코드 값                                                                                     |
+| rrsets.created_at      | Body | Date    | 레코드 세트 생성한 시간                                                                                   |
+| rrsets.updated_at      | Body | Date    | 레코드 세트 수정한 시간                                                                                   |
 
 <details>
   <summary>예시</summary>
@@ -348,9 +348,9 @@ X-Auth-Token: {tokenId}
 | rrset.description | Body | String  | 레코드 세트 설명                                                                              |
 | rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                          |
 | rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
-| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
+| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
  | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                            |
+| rrset.records.content | Body | Array   | 레코드 세트 레코드 값                                                                            |
 | rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                          |
 | rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
@@ -397,7 +397,7 @@ X-Auth-Token: {tokenId}
 | rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록                                                                          |
 | rrset.records.content | Body | String  | O   | 레코드 값                                                                                   |
 | rrset.ttl             | Body | Integer | -   | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
-| rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
+| rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
 | rrset.description     | Body | String  | O   | 레코드 세트 설명                                                                              |
 
 
@@ -435,9 +435,9 @@ X-Auth-Token: {tokenId}
 | rrset.description | Body | String  | 레코드 세트 설명                                                                              |
 | rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                          |
 | rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                             |
-| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
+| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
  | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                                    |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                            |
+| rrset.records.content | Body | Array   | 레코드 세트 레코드 값                                                                            |
 | rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                          |
 | rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                          |
 
@@ -487,7 +487,7 @@ X-Auth-Token: {tokenId}
 | rrset.records         | Body | Array   | O   | 레코드 세트 레코드 목록 <br> 레코드 목록을 수정하는 경우, 기존 값은 모두 제거되고 수정 요청한 레코드로 적용됨                      |
 | rrset.records.content | Body | String  | O   | 레코드 값                                                                                  |
 | rrset.ttl             | Body | Integer | -   | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                            |
-| rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
+| rrset.type            | Body | String  | O   | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
 | rrset.description     | Body | String  | O   | 레코드 세트 설명                                                                              |
 
 <details>
@@ -519,9 +519,9 @@ X-Auth-Token: {tokenId}
 | rrset.description | Body | String  | 레코드 세트 설명                                                                          |
 | rrset.zone_id  | Body | String  | 레코드 세트가 속한 Private DNS Zone ID                                                     |
 | rrset.ttl      | Body | Integer | 레코드 세트 정보 갱신 주기. 기본값은 `300`                                                                         |
-| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA` `CNAME` `MX` `NAPTR` `NS` `PTR` `SOA` `SPF` `SRV` `TXT` |
+| rrset.type     | Body | String  | 레코드 세트 타입.  `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NAPTR`, `NS`, `PTR`, `SOA`, `SPF`, `SRV`, `TXT` |
  | rrset.records  | Body | Array   | 레코드 세트에 속한 레코드 객체 목록                                                               |
-| rrset.records.content | Body | Array   | 레코드 세트 레코드값                                                                        |
+| rrset.records.content | Body | Array   | 레코드 세트 레코드 값                                                                        |
 | rrset.created_at | Body | Date    | 레코드 세트 생성한 시간                                                                     |
 | rrset.updated_at | Body | Date    | 레코드 세트 수정한 시간                                                                     |
 
