@@ -6,7 +6,7 @@ Private DNS zones and recordsets use the endpoints of the `network` type. See th
 
 | Type | Region | Endpoint |
 |---|---|---|
-| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com |
+| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region<br>Korea (Gwangju) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com |
 
 
 Fields not specified in the guide may appear in the API response. Do not use these fields as they are for NHN Cloud internal use and are subject to change without notice.
