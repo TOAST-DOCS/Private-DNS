@@ -1,8 +1,12 @@
-## Network > Private DNS > 개요
+<!-- pre-align:aligned sig=f2d552729ba2 -->
+
+<a id="network-private-dns-overview"></a>
+## Network > Private DNS > 개요 { #network-private-dns-overview }
 
 Private DNS는 VPC 별로 독립된 DNS를 구성 할 수 있습니다. 별도의 DNS 솔루션이나 서버 없이 웹콘솔에서의 설정으로 VPC 내의 인스턴스에서 접근 가능한 DNS 서비스를 할 수 있습니다.
 
-## 주요 기능
+<a id="main-features"></a>
+## 주요 기능 { #main-features }
 - VPC 별로 독립된 DNS를 구성할 수 있습니다.
 - 별도의 DNS 솔루션이나 서버 없이 콘솔을 통한 설정만으로 VPC 내의 인스턴스에서 접근 가능한 DNS 서비스를 구성할 수 있습니다.
 - 하나의 Zone(도메인 영역)에 한 개 이상의 VPC를 연결할 수 있습니다. 
@@ -15,12 +19,14 @@ Private DNS는 VPC 별로 독립된 DNS를 구성 할 수 있습니다. 별도�
 > * Private DNS 운영을 위해 모니터링에서 발생되는 쿼리 사용량이 존재합니다. 해당 쿼리 사용량은 무료로 제공합니다.
 > * 모니터링에서 발생되는 쿼리 사용량은 이용 현황에 집계가 됩니다.
 
-## 서비스 대상
+<a id="service-targets"></a>
+## 서비스 대상 { #service-targets }
 
 - VPC 내에서만 접근 가능한 도메인 설정이 필요한 경우
 - NHN Cloud 서비스와 연동을 위해 설정이 필요한 경우
 
-## 서비스 용어
+<a id="service-terms"></a>
+## 서비스 용어 { #service-terms }
 
 | 용어             | 설명                                  |
 |----------------|-------------------------------------|

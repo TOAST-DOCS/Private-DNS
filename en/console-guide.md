@@ -1,6 +1,10 @@
-## Network > Private DNS > Console Usage Guide
+<!-- pre-align:aligned sig=50489d584d37 -->
 
-### Create Private DNS Zone 
+<a id="network-private-dns-console-usage-guide"></a>
+## Network > Private DNS > Console Usage Guide { #network-private-dns-console-usage-guide }
+
+<a id="create-private-dns-zone"></a>
+### Create Private DNS Zone { #create-private-dns-zone }
 
 1. Private DNS Zone is domain area for hosts served by Private DNS as a container for record set, and click on **Create Private DNS Zone button to create.
 
@@ -36,7 +40,8 @@
 > * Only Private DNS configured on one of the VPCs on either port can operate.
 > * If you do not set the VPC port on which you want to use the Private DNS service to eth0 for the instance, you might not receive DNS responses based on routing priority.
 
-### Modify Private DNS Zone
+<a id="modify-private-dns-zone"></a>
+### Modify Private DNS Zone { #modify-private-dns-zone }
 
 1. Select the Private DNS Zone to modify, then click **Modify Private DNS Zone** .
    
@@ -45,13 +50,15 @@
 
 3. Modify **Description** and click **Confirm**.
 
-### Delete Private DNS Zone
+<a id="delete-private-dns-zone"></a>
+### Delete Private DNS Zone { #delete-private-dns-zone }
 
 1. Select all DNS Zones to delete and click **Delete DNS Zone**.
 
 2. Click **Confirm**. All record sets within the DNS Zone will be deleted and it will take some time to finish the job.
 
-## Manage record sets
+<a id="manage-record-sets"></a>
+## Manage record sets { #manage-record-sets }
 
 You can manage the record sets of the selected DNS Zone from **Private DNS** screen of the menu.
 
@@ -59,7 +66,8 @@ You can manage the record sets of the selected DNS Zone from **Private DNS** scr
 - The SOA and NS record sets for **Private DNS Zone name** are created by default and cannot be modified or deleted.
 - SOA record sets are cannot be created/modified/deleted, and NS record sets cannot created/modified/deleted with **Private DNS Zone Name**.
 
-### Create Record Set
+<a id="create-record-set"></a>
+### Create Record Set { #create-record-set }
 
 1. A record set is the information of the host to serve. Click **Create Record Set** to create a record set.
 
@@ -81,7 +89,8 @@ You can manage the record sets of the selected DNS Zone from **Private DNS** scr
 
     - Contact Us: Customer Center > [1:1 Inquiry](https://www.nhncloud.com/kr/support/inquiry)
 
-### Bulk Create Record Sets
+<a id="bulk-create-record-sets"></a>
+### Bulk Create Record Sets { #bulk-create-record-sets }
 
 1. Click **Create Multiple Record Sets**.
 
@@ -89,7 +98,8 @@ You can manage the record sets of the selected DNS Zone from **Private DNS** scr
 
 3. On the screen, check the information entered on the template and click **Confirm**.
 
-### Modify Record Set
+<a id="modify-record-set"></a>
+### Modify Record Set { #modify-record-set }
 
 1. Select a record set to modify and click the **Modify Record Set** button.
 
@@ -98,7 +108,8 @@ You can manage the record sets of the selected DNS Zone from **Private DNS** scr
 3. After completing the configuration, click **Confirm**.
 
 
-### Delete Record Set
+<a id="delete-record-set"></a>
+### Delete Record Set { #delete-record-set }
 
 1. After you've selected all the record sets you want to delete, click the **Delete record sets** button.
 
