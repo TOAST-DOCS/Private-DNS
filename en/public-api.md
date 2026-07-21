@@ -1,4 +1,7 @@
-## Network > Private DNS > API v2 Guide
+<!-- pre-align:aligned sig=797776c94fa3 -->
+
+<a id="network-private-dns-api-v2-guide"></a>
+## Network > Private DNS > API v2 Guide { #network-private-dns-api-v2-guide }
 
 NHN Cloud Network services use IaaS tokens for authentication and authorization when making API calls. The IaaS token is an authentication token used for NHN Cloud's OpenStack-based infrastructure services (IaaS). For more information on issuing and using IaaS tokens, please refer to the [IaaS Token](/nhncloud/en/public-api/iaas-token).
 
@@ -11,14 +14,17 @@ Private DNS zones and recordsets use the endpoints of the `network` type. See th
 
 Fields not specified in the guide may appear in the API response. Do not use these fields as they are for NHN Cloud internal use and are subject to change without notice.
 
-## Private DNS Zone
-### View the list of Private DNS Zones
+<a id="private-dns-zone"></a>
+## Private DNS Zone { #private-dns-zone }
+<a id="view-the-list-of-private-dns-zones"></a>
+### View the list of Private DNS Zones { #view-the-list-of-private-dns-zones }
 
 ```
 GET /v2.0/privatedns/zones 
 X-Auth-Token: {tokenId} 
 ```
 
+<a id="view-the-list-of-private-dns-zones-request"></a>
 #### Request
 This API does not require a request body.
 
@@ -30,6 +36,7 @@ This API does not require a request body.
 | String | Query | String | - | Private DNS Zone status to retrieve       |
 
 
+<a id="view-the-list-of-private-dns-zones-response"></a>
 #### Response
 
 | Name                | Type | Format      | Description                              |
@@ -71,13 +78,15 @@ This API does not require a request body.
 
 ***
 
-### View Private DNS Zone
+<a id="view-private-dns-zone"></a>
+### View Private DNS Zone { #view-private-dns-zone }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-private-dns-zone-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -99,13 +108,15 @@ This API does not require a request body.
 | zones.updated_at  | Body | Date    | Private DNS Zone Modified Time        |
 | zones.rrset_count | Body | Integer | Number of recordsets the Private DNS Zone has |
 
-### Create a Private DNS Zone
+<a id="create-a-private-dns-zone"></a>
+### Create a Private DNS Zone { #create-a-private-dns-zone }
 
 ```
 POST /v2.0/privatedns/zones
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-private-dns-zone-request"></a>
 #### Request
 
 | Name               | Type | Format     | Required  | Description                                |
@@ -134,6 +145,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-private-dns-zone-response"></a>
 #### Response
 
 | Name            | Type | Format      | Description                                     |
@@ -169,13 +181,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Modifying a Private DNS Zone
+<a id="modifying-a-private-dns-zone"></a>
+### Modifying a Private DNS Zone { #modifying-a-private-dns-zone }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modifying-a-private-dns-zone-request"></a>
 #### Request
 
 | Name               | Type | Format     | Required  | Description                                                                                         |
@@ -202,6 +216,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modifying-a-private-dns-zone-response"></a>
 #### Response
 
 | Name            | Type | Format      | Description                                     |
@@ -236,13 +251,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Deleting a Private DNS Zone
+<a id="deleting-a-private-dns-zone"></a>
+### Deleting a Private DNS Zone { #deleting-a-private-dns-zone }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="deleting-a-private-dns-zone-request"></a>
 #### Request
 
 
@@ -253,12 +270,15 @@ This API does not require a request body.
 | tokenId | Header | String | O | Token ID               |
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 
+<a id="deleting-a-private-dns-zone-response"></a>
 #### Response
 
 This API does not return a response body.
 
-## Record set 
-### View a list of recordsets
+<a id="record-set"></a>
+## Record set { #record-set }
+<a id="view-a-list-of-recordsets"></a>
+### View a list of recordsets { #view-a-list-of-recordsets }
 
 
 ```
@@ -266,6 +286,7 @@ GET /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-list-of-recordsets-request"></a>
 #### Request
 This API does not require a request body.
 
@@ -278,6 +299,7 @@ This API does not require a request body.
 | String    | Query  | String  | - | Record types to retrieve                     |
 | ttl     | Query  | Integer | - | TTL of the record to retrieve                    |
 
+<a id="view-a-list-of-recordsets-response"></a>
 #### Response
 
 | Name                     | Type | Format      | Description                                                                                      |
@@ -321,13 +343,15 @@ This API does not require a request body.
 
 </details>
 
-### View a Recordset
+<a id="view-a-recordset"></a>
+### View a Recordset { #view-a-recordset }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-recordset-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -338,6 +362,7 @@ This API does not require a request body.
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID | O | Record set ID           |
 
+<a id="view-a-recordset-response"></a>
 #### Response
 
 | Name             | Type | Format      | Description                                                                                      |
@@ -379,13 +404,15 @@ This API does not require a request body.
 
 </details>
 
-### Create a recordset
+<a id="create-a-recordset"></a>
+### Create a recordset { #create-a-recordset }
 
 ```
 POST /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-recordset-request"></a>
 #### Request
 
 | Name                    | Type | Format      | Required | Description                                                                                      |
@@ -425,6 +452,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-recordset-response"></a>
 #### Response
 
 | Name             | Type | Format      | Description                                                                                      |
@@ -469,13 +497,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Modify a recordset
+<a id="modify-a-recordset"></a>
+### Modify a recordset { #modify-a-recordset }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modify-a-recordset-request"></a>
 #### Request
 
 | Name                    | Type | Format      | Required | Description                                                                                     |
@@ -509,6 +539,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modify-a-recordset-response"></a>
 #### Response
 
 | Name             | Type | Format      | Description                                                                                 |
@@ -550,13 +581,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Delete a recordset
+<a id="delete-a-recordset"></a>
+### Delete a recordset { #delete-a-recordset }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="delete-a-recordset-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -567,6 +600,7 @@ This API does not require a request body.
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID    | O | Recordset ID to modify  |
 
+<a id="delete-a-recordset-response"></a>
 #### Response
 
 This API does not return a response body.
