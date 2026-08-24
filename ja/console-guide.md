@@ -1,6 +1,10 @@
-## Network > Private DNS > コンソール使用ガイド
+<!-- pre-align:aligned sig=50489d584d37 -->
 
-### Private DNS Zoneの作成
+<a id="network-private-dns-console-usage-guide"></a>
+## Network > Private DNS > コンソール使用ガイド { #network-private-dns-console-usage-guide }
+
+<a id="create-private-dns-zone"></a>
+### Private DNS Zoneの作成 { #create-private-dns-zone }
 
 1. Private DNS ZoneはレコードセットのコンテナとしてPrivate DNSがサービスするホストに対するドメイン領域であり、**Private DNS Zoneの作成**ボタンをクリックして作成します。
 
@@ -35,7 +39,8 @@
 > * 2つのポートのうち1つのVPCに設定されたPrivate DNSのみ動作できます。
 > * Private DNS機能を使用するVPCポートをインスタンスのeth0に設定しない場合、ルーティング優先順位によってDNSレスポンスを受けられない場合があります。
 
-### Private DNS Zoneの修正
+<a id="modify-private-dns-zone"></a>
+### Private DNS Zoneの修正 { #modify-private-dns-zone }
 
 1. 修正するPrivate DNS Zoneを選択した後、**Private DNS Zone修正**ボタンをクリックします。
    
@@ -44,13 +49,15 @@
 
 3. **説明**を修正し、**確認**ボタンをクリックします。
 
-### Private DNS Zoneの削除
+<a id="delete-private-dns-zone"></a>
+### Private DNS Zoneの削除 { #delete-private-dns-zone }
 
 1. 削除するDNS Zoneをすべて選択した後、**DNS Zone削除**ボタンをクリックします。
 
 2. **確認**ボタンをクリックします。DNS Zone内のすべてのレコードセットも削除され、一定時間がかかります。
 
-## レコードセットの管理
+<a id="manage-record-sets"></a>
+## レコードセットの管理 { #manage-record-sets }
 
 メニューの**Private DNS**画面で選択したDNS Zoneのレコードセットを管理できます。
 
@@ -58,7 +65,8 @@
 - **Private DNS Zone名**のSOAとNSレコードセットは基本的に作成され、修正や削除はできません。
 - SOAレコードセットは作成/修正/削除することができず、NSレコードセットは**Private DNS Zone名**で作成/修正/削除できません。
 
-### レコードセットの作成
+<a id="create-record-set"></a>
+### レコードセットの作成 { #create-record-set }
 
 1. レコードセットはサービスされるホスト情報であり、**レコードセット作成**ボタンをクリックして作成します。
 
@@ -80,7 +88,8 @@
 
     - お問い合わせ先：[1:1お問い合わせ](https://www.nhncloud.com/kr/support/inquiry)
 
-### レコードセット大量作成
+<a id="bulk-create-record-sets"></a>
+### レコードセット大量作成 { #bulk-create-record-sets }
 
 1. **レコードセット大量作成** ボタンをクリックします。
 
@@ -88,7 +97,8 @@
 
 3. テンプレートに入力した情報を画面で確認した後、**確認**ボタンをクリックします。
 
-### レコードセットの修正
+<a id="modify-record-set"></a>
+### レコードセットの修正 { #modify-record-set }
 
 1. 修正するレコードセットを選択した後、**レコードセット修正**ボタンをクリックします。
 
@@ -97,7 +107,8 @@
 3. 設定完了後、**確認**ボタンをクリックします。
 
 
-### レコードセットの削除
+<a id="delete-record-set"></a>
+### レコードセットの削除 { #delete-record-set }
 
 1. 削除するレコードセットをすべて選択した後、**レコードセットの削除**ボタンをクリックします。
 

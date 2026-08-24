@@ -1,6 +1,8 @@
-## Network > Private DNS > 콘솔 사용 가이드
+<a id="network-private-dns-console-usage-guide"></a>
+## Network > Private DNS > 콘솔 사용 가이드 { #network-private-dns-console-usage-guide }
 
-### Private DNS Zone 생성
+<a id="create-private-dns-zone"></a>
+### Private DNS Zone 생성 { #create-private-dns-zone }
 
 1. Private DNS Zone은 레코드 세트의 컨테이너로 Private DNS가 서비스하는 호스트에 대한 도메인 영역이며, **Private DNS Zone 생성** 버튼을 클릭하여 생성합니다.
 
@@ -36,7 +38,8 @@
 > * 두 포트 중 하나의 VPC에 설정된 Private DNS만 동작할 수 있습니다.
 > * Private DNS 서비스를 사용하려는 VPC 포트를 인스턴스의 eth0으로 설정하지 않으면, 라우팅 우선순위에 따라서 DNS 응답을 받지 못할 수 있습니다.
 
-### Private DNS Zone 수정
+<a id="modify-private-dns-zone"></a>
+### Private DNS Zone 수정 { #modify-private-dns-zone }
 
 1. 수정할 Private DNS Zone을 선택한 후, **Private DNS Zone 수정** 버튼을 클릭합니다.
    
@@ -45,13 +48,15 @@
 
 3. **설명**을 수정하고, **확인** 버튼을 클릭합니다.
 
-### Private DNS Zone 삭제
+<a id="delete-private-dns-zone"></a>
+### Private DNS Zone 삭제 { #delete-private-dns-zone }
 
 1. 삭제할 DNS Zone을 모두 선택한 후, **DNS Zone 삭제** 버튼을 클릭합니다.
 
 2. **확인** 버튼을 클릭합니다. DNS Zone 내 모든 레코드 세트도 삭제되며 일정 시간이 소요됩니다.
 
-## 레코드 세트 관리
+<a id="manage-record-sets"></a>
+## 레코드 세트 관리 { #manage-record-sets }
 
 메뉴의 **Private DNS** 화면에서 선택한 DNS Zone의 레코드 세트를 관리할 수 있습니다.
 
@@ -59,7 +64,8 @@
 - **Private DNS Zone 이름**의 SOA와 NS 레코드 세트는 기본으로 생성되며 수정 및 삭제할 수 없습니다.
 - SOA 레코드 세트는 생성/수정/삭제할 수 없으며, NS 레코드 세트는 **Private DNS Zone 이름**으로 생성/수정/삭제할 수 없습니다.
 
-### 레코드 세트 생성
+<a id="create-record-set"></a>
+### 레코드 세트 생성 { #create-record-set }
 
 1. 레코드 세트는 서비스되는 호스트 정보이며, **레코드 세트 생성** 버튼을 클릭하여 생성합니다.
 
@@ -81,7 +87,8 @@
 
     - 문의처: 고객 센터 > [1:1 문의](https://www.ngsc.go.kr/kr/support/inquiry)
 
-### 레코드 세트 대량 생성
+<a id="bulk-create-record-sets"></a>
+### 레코드 세트 대량 생성 { #bulk-create-record-sets }
 
 1. **레코드 세트 대량 생성** 버튼을 클릭합니다.
 
@@ -89,7 +96,8 @@
 
 3. 템플릿에 입력한 정보를 화면에서 확인한 후 **확인** 버튼을 클릭합니다.
 
-### 레코드 세트 수정
+<a id="modify-record-set"></a>
+### 레코드 세트 수정 { #modify-record-set }
 
 1. 수정할 레코드 세트를 선택한 후, **레코드 세트 수정** 버튼을 클릭합니다.
 
@@ -98,7 +106,8 @@
 3. 설정 완료 후 **확인** 버튼을 클릭합니다.
 
 
-### 레코드 세트 삭제
+<a id="delete-record-set"></a>
+### 레코드 세트 삭제 { #delete-record-set }
 
 1. 삭제할 레코드 세트를 모두 선택한 후, **레코드 세트 삭제** 버튼을 클릭합니다.
 
