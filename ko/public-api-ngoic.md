@@ -1,4 +1,5 @@
-## Network > Private DNS > API v2 가이드
+<a id="network-private-dns-api-v2-guide"></a>
+## Network > Private DNS > API v2 가이드 { #network-private-dns-api-v2-guide }
 
 API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api-ngoic/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
 
@@ -11,14 +12,17 @@ Private DNS Zone과 레코드 세트는 `network` 타입 엔드포인트를 이�
 
 API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니다. 이런 필드는 NHN Cloud 내부 용도로 사용하며 사전 공지 없이 변경될 수 있으므로 사용하지 않습니다.
 
-## Private DNS Zone
-### Private DNS Zone 목록 보기
+<a id="private-dns-zone"></a>
+## Private DNS Zone { #private-dns-zone }
+<a id="view-the-list-of-private-dns-zones"></a>
+### Private DNS Zone 목록 보기 { #view-the-list-of-private-dns-zones }
 
 ```
 GET /v2.0/privatedns/zones 
 X-Auth-Token: {tokenId} 
 ```
 
+<a id="view-the-list-of-private-dns-zones-request"></a>
 #### 요청
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -30,6 +34,7 @@ X-Auth-Token: {tokenId}
 | status | Query | String | - | 조회할 Private DNS Zone 상태       |
 
 
+<a id="view-the-list-of-private-dns-zones-response"></a>
 #### 응답
 
 | 이름                | 종류 | 형식      | 설명                           |
@@ -71,13 +76,15 @@ X-Auth-Token: {tokenId}
 
 ***
 
-### Private DNS Zone 보기
+<a id="view-private-dns-zone"></a>
+### Private DNS Zone 보기 { #view-private-dns-zone }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-private-dns-zone-request"></a>
 #### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
@@ -99,13 +106,15 @@ X-Auth-Token: {tokenId}
 | zones.updated_at  | Body | Date    | Private DNS Zone 수정한 시간        |
 | zones.rrset_count | Body | Integer | Private DNS Zone의 레코드 세트 개수 |
 
-### Private DNS Zone 생성하기
+<a id="create-a-private-dns-zone"></a>
+### Private DNS Zone 생성하기 { #create-a-private-dns-zone }
 
 ```
 POST /v2.0/privatedns/zones
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-private-dns-zone-request"></a>
 #### 요청
 
 | 이름               | 종류 | 형식     | 필수  | 설명                                |
@@ -134,6 +143,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-private-dns-zone-response"></a>
 #### 응답
 
 | 이름            | 종류 | 형식      | 설명                                     |
@@ -169,13 +179,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Private DNS Zone 수정하기
+<a id="modifying-a-private-dns-zone"></a>
+### Private DNS Zone 수정하기 { #modifying-a-private-dns-zone }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modifying-a-private-dns-zone-request"></a>
 #### 요청
 
 | 이름               | 종류 | 형식     | 필수  | 설명                                                                                         |
@@ -202,6 +214,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modifying-a-private-dns-zone-response"></a>
 #### 응답
 
 | 이름            | 종류 | 형식      | 설명                                     |
@@ -236,13 +249,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Private DNS Zone 삭제하기
+<a id="deleting-a-private-dns-zone"></a>
+### Private DNS Zone 삭제하기 { #deleting-a-private-dns-zone }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="deleting-a-private-dns-zone-request"></a>
 #### 요청
 
 
@@ -253,12 +268,15 @@ X-Auth-Token: {tokenId}
 | tokenId | Header | String | O | 토큰 ID               |
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 
+<a id="deleting-a-private-dns-zone-response"></a>
 #### 응답
 
 이 API는 응답 본문을 반환하지 않습니다.
 
-## 레코드 세트 
-### 레코드 세트 목록 보기
+<a id="record-set"></a>
+## 레코드 세트 { #record-set }
+<a id="view-a-list-of-recordsets"></a>
+### 레코드 세트 목록 보기 { #view-a-list-of-recordsets }
 
 
 ```
@@ -266,6 +284,7 @@ GET /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-list-of-recordsets-request"></a>
 #### 요청
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -278,6 +297,7 @@ X-Auth-Token: {tokenId}
 | type    | Query  | String  | - | 조회할 레코드 타입                     |
 | ttl     | Query  | Integer | - | 조회할 레코드 ttl                    |
 
+<a id="view-a-list-of-recordsets-response"></a>
 #### 응답
 
 | 이름                     | 종류 | 형식      | 설명                                                                                              |
@@ -321,13 +341,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### 레코드 세트 보기
+<a id="view-a-recordset"></a>
+### 레코드 세트 보기 { #view-a-recordset }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-recordset-request"></a>
 #### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
@@ -338,6 +360,7 @@ X-Auth-Token: {tokenId}
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID | O | 레코드 세트 ID           |
 
+<a id="view-a-recordset-response"></a>
 #### 응답
 
 | 이름             | 종류 | 형식      | 설명                                                                                      |
@@ -379,13 +402,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### 레코드 세트 생성하기
+<a id="create-a-recordset"></a>
+### 레코드 세트 생성하기 { #create-a-recordset }
 
 ```
 POST /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-recordset-request"></a>
 #### 요청
 
 | 이름                    | 종류 | 형식      | 필수 | 설명                                                                                      |
@@ -425,6 +450,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-recordset-response"></a>
 #### 응답
 
 | 이름             | 종류 | 형식      | 설명                                                                                      |
@@ -469,13 +495,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### 레코드 세트 수정하기
+<a id="modify-a-recordset"></a>
+### 레코드 세트 수정하기 { #modify-a-recordset }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modify-a-recordset-request"></a>
 #### 요청
 
 | 이름                    | 종류 | 형식      | 필수 | 설명                                                                                     |
@@ -509,6 +537,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modify-a-recordset-response"></a>
 #### 응답
 
 | 이름             | 종류 | 형식      | 설명                                                                                 |
@@ -550,13 +579,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### 레코드 세트 삭제하기
+<a id="delete-a-recordset"></a>
+### 레코드 세트 삭제하기 { #delete-a-recordset }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="delete-a-recordset-request"></a>
 #### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
@@ -567,6 +598,7 @@ X-Auth-Token: {tokenId}
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID    | O | 수정할 레코드 세트 ID  |
 
+<a id="delete-a-recordset-response"></a>
 #### 응답
 
 이 API는 응답 본문을 반환하지 않습니다.
