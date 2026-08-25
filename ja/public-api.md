@@ -1,4 +1,7 @@
-## Network > Private DNS > API v2ガイド
+<!-- pre-align:aligned sig=797776c94fa3 -->
+
+<a id="network-private-dns-api-v2-guide"></a>
+## Network > Private DNS > API v2ガイド { #network-private-dns-api-v2-guide }
 
 NHN Cloud Networkサービスは、API呼び出し時の認証/認可のためにIaaSトークンを使用します。IaaSトークンは、NHN CloudのOpenStackベースのインフラサービス(IaaS)で使用する認証トークンです。IaaSトークンの発行及び使用に関する詳細は、[IaaSトークン](/nhncloud/ja/public-api/iaas-token)を参照してください。
 
@@ -11,14 +14,17 @@ Private DNS Zoneとレコードセットは`network`タイプエンドポイン�
 
 APIレスポンスにガイドに記載されていないフィールドが表示される場合があります。このようなフィールドは、NHN Cloudの内部用途に使用され、事前告知なしに変更される可能性があるため、使用しないでください。
 
-## Private DNS Zone
-### Private DNS Zoneリスト表示
+<a id="private-dns-zone"></a>
+## Private DNS Zone { #private-dns-zone }
+<a id="view-the-list-of-private-dns-zones"></a>
+### Private DNS Zoneリスト表示 { #view-the-list-of-private-dns-zones }
 
 ```
 GET /v2.0/privatedns/zones 
 X-Auth-Token: {tokenId} 
 ```
 
+<a id="view-the-list-of-private-dns-zones-request"></a>
 #### リクエスト
 このAPIはリクエスト本文を要求しません。
 
@@ -30,6 +36,7 @@ X-Auth-Token: {tokenId}
 | status | Query | String | - | 照会するPrivate DNS Zone状態     |
 
 
+<a id="view-the-list-of-private-dns-zones-response"></a>
 #### レスポンス
 
 | 名前              | 種類 | 形式    | 説明                            |
@@ -71,13 +78,15 @@ X-Auth-Token: {tokenId}
 
 ***
 
-### Private DNS Zone表示
+<a id="view-private-dns-zone"></a>
+### Private DNS Zone表示 { #view-private-dns-zone }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-private-dns-zone-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -99,13 +108,15 @@ X-Auth-Token: {tokenId}
 | zones.updated_at  | Body | Date    | Private DNS Zone修正した時間      |
 | zones.rrset_count | Body | Integer | Private DNS Zoneが持っているレコードセット数 |
 
-### Private DNS Zone作成
+<a id="create-a-private-dns-zone"></a>
+### Private DNS Zone作成 { #create-a-private-dns-zone }
 
 ```
 POST /v2.0/privatedns/zones
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-private-dns-zone-request"></a>
 #### リクエスト
 
 | 名前             | 種類 | 形式   | 必須 | 説明                              |
@@ -134,6 +145,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-private-dns-zone-response"></a>
 #### レスポンス
 
 | 名前          | 種類 | 形式    | 説明                                   |
@@ -169,13 +181,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Private DNS Zone修正
+<a id="modifying-a-private-dns-zone"></a>
+### Private DNS Zone修正 { #modifying-a-private-dns-zone }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modifying-a-private-dns-zone-request"></a>
 #### リクエスト
 
 | 名前             | 種類 | 形式   | 必須 | 説明                                                                                       |
@@ -202,6 +216,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modifying-a-private-dns-zone-response"></a>
 #### レスポンス
 
 | 名前          | 種類 | 形式    | 説明                                   |
@@ -236,13 +251,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### Private DNS Zone削除
+<a id="deleting-a-private-dns-zone"></a>
+### Private DNS Zone削除 { #deleting-a-private-dns-zone }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="deleting-a-private-dns-zone-request"></a>
 #### リクエスト
 
 
@@ -253,12 +270,15 @@ X-Auth-Token: {tokenId}
 | tokenId | Header | String | O | トークンID               |
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 
+<a id="deleting-a-private-dns-zone-response"></a>
 #### レスポンス
 
 このAPIはレスポンス本文を返しません。
 
-## レコードセット 
-### レコードセットリスト表示
+<a id="record-set"></a>
+## レコードセット { #record-set }
+<a id="view-a-list-of-recordsets"></a>
+### レコードセットリスト表示 { #view-a-list-of-recordsets }
 
 
 ```
@@ -266,6 +286,7 @@ GET /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-list-of-recordsets-request"></a>
 #### リクエスト
 このAPIはリクエスト本文を要求しません。
 
@@ -278,6 +299,7 @@ X-Auth-Token: {tokenId}
 | type    | Query  | String  | - | 照会するレコードタイプ                   |
 | ttl     | Query  | Integer | - | 照会するレコードttl                    |
 
+<a id="view-a-list-of-recordsets-response"></a>
 #### レスポンス
 
 | 名前                   | 種類 | 形式    | 説明                                                                                    |
@@ -321,13 +343,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### レコードセット表示
+<a id="view-a-recordset"></a>
+### レコードセット表示 { #view-a-recordset }
 
 ```
 GET /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="view-a-recordset-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -338,6 +362,7 @@ X-Auth-Token: {tokenId}
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID | O | レコードセットID           |
 
+<a id="view-a-recordset-response"></a>
 #### レスポンス
 
 | 名前           | 種類 | 形式    | 説明                                                                                    |
@@ -379,13 +404,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### レコードセット作成
+<a id="create-a-recordset"></a>
+### レコードセット作成 { #create-a-recordset }
 
 ```
 POST /v2.0/privatedns/zones/{zoneId}/rrsets
 X-Auth-Token: {tokenId}
 ```
 
+<a id="create-a-recordset-request"></a>
 #### リクエスト
 
 | 名前                  | 種類 | 形式    | 必須 | 説明                                                                                    |
@@ -425,6 +452,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="create-a-recordset-response"></a>
 #### レスポンス
 
 | 名前           | 種類 | 形式    | 説明                                                                                    |
@@ -469,13 +497,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### レコードセット修正
+<a id="modify-a-recordset"></a>
+### レコードセット修正 { #modify-a-recordset }
 
 ```
 PUT /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="modify-a-recordset-request"></a>
 #### リクエスト
 
 | 名前                  | 種類 | 形式    | 必須 | 説明                                                                                   |
@@ -509,6 +539,7 @@ X-Auth-Token: {tokenId}
 
 </details>
 
+<a id="modify-a-recordset-response"></a>
 #### レスポンス
 
 | 名前           | 種類 | 形式    | 説明                                                                               |
@@ -550,13 +581,15 @@ X-Auth-Token: {tokenId}
 
 </details>
 
-### レコードセット削除
+<a id="delete-a-recordset"></a>
+### レコードセット削除 { #delete-a-recordset }
 
 ```
 DELETE /v2.0/privatedns/zones/{zoneId}/rrsets/{rrsetId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="delete-a-recordset-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -567,6 +600,7 @@ X-Auth-Token: {tokenId}
 | zoneId  | URL | UUID | O | Private DNS Zone ID |
 | rrsetId | URL | UUID    | O | 修正するレコードセットID  |
 
+<a id="delete-a-recordset-response"></a>
 #### レスポンス
 
 このAPIはレスポンス本文を返しません。

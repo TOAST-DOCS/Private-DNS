@@ -1,8 +1,12 @@
-## Network > Private DNS > 概要
+<!-- pre-align:aligned sig=f2d552729ba2 -->
+
+<a id="network-private-dns-overview"></a>
+## Network > Private DNS > 概要 { #network-private-dns-overview }
 
 Private DNSはVPCごとに独立したDNSを構成できます。別途のDNSソリューションやサーバーなしで、Webコンソールでの設定でVPC内のインスタンスからアクセス可能なDNSサービスを行うことができます。
 
-## 主な機能
+<a id="main-features"></a>
+## 主な機能 { #main-features }
 - VPCごとに独立したDNSを構成できます。
 - 別のDNSソリューションやサーバーなしで、Webコンソールでの設定でVPC内のインスタンスからアクセス可能なDNSサービスを行うことができます。
 - 一つのZone(ドメイン領域)に一つ以上のVPCを接続できます。
@@ -15,12 +19,14 @@ Private DNSはVPCごとに独立したDNSを構成できます。別途のDNSソ
 > * Private DNS運営のため、モニタリングで発生するクエリ使用量が存在します。当該クエリ使用量は無料で提供します。
 > * モニタリングで発生するクエリ使用量は利用現況に集計されます。
 
-## サービス対象
+<a id="service-targets"></a>
+## サービス対象 { #service-targets }
 
 - VPC内でのみアクセス可能なドメイン設定が必要な場合
 - NHN Cloudサービスと連動するために設定が必要な場合
 
-## サービス用語
+<a id="service-terms"></a>
+## サービス用語 { #service-terms }
 
 | 用語            | 説明                                 |
 |----------------|-------------------------------------|
