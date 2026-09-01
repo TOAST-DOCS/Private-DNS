@@ -1,15 +1,53 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=797776c94fa3 -->
+
+{% if "gov" in build_flags -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "-gov" -%}
+  {%- set region_names   = "Korea (Pangyo) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gov-nhncloudservice.com" -%}
+{%- elif "ncgn" in build_flags -%}
+  {%- set identity_env   = "ncgn" -%}
+  {%- set region_names   = "Korea (Pangyo) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gncloud.go.kr" -%}
+{%- elif "ngsc" in build_flags -%}
+  {%- set identity_env   = "ngsc" -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngsc.go.kr" -%}
+{%- elif "ngovc" in build_flags -%}
+  {%- set identity_env   = "ngovc" -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngovc.com" -%}
+{%- elif "ngoic" in build_flags -%}
+  {%- set identity_env   = "ngoic" -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngoic.com" -%}
+{%- elif "ninc" in build_flags -%}
+  {%- set identity_env   = "ninc" -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ninc.go.kr" -%}
+{%- else -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "" -%}
+  {%- set region_names   = "Korea (Pangyo) Region<br>Korea (Pyeongchon) Region<br>Korea (Gwangju) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com" -%}
+{%- endif -%}
 
 <a id="network-private-dns-api-v2-guide"></a>
 ## Network > Private DNS > API v2 Guide { #network-private-dns-api-v2-guide }
 
-NHN Cloud Network services use IaaS tokens for authentication and authorization when making API calls. The IaaS token is an authentication token used for NHN Cloud's OpenStack-based infrastructure services (IaaS). For more information on issuing and using IaaS tokens, please refer to the [IaaS Token](/nhncloud/en/public-api/iaas-token).
+{% if identity_env -%}
+To use the API, you need an API endpoint, token, etc. Refer to [API Preparations](/Compute/Compute/en/identity-api-$[ identity_env ]$/) to prepare the information required to use the API.
+{%- else -%}
+The NHN Cloud Network service uses the IaaS token for authentication/authorization when making API calls. The IaaS token is the authentication token used by the NHN Cloud's OpenStack-based infrastructure service (IaaS). For more information on IaaS token issuance and usage, see [IaaS token](/nhncloud/en/public-api/iaas-token$[ token_suffix ]$).
+{%- endif %}
 
 Private DNS zones and recordsets use the endpoints of the `network` type. See the `serviceCatalog`in the token issuance response for the exact endpoint.
 
 | Type | Region | Endpoint |
 |---|---|---|
-| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region<br>Korea (Gwangju) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com |
+| network | $[ region_names ]$ | $[ region_urls ]$ |
 
 
 Fields not specified in the guide may appear in the API response. Do not use these fields as they are for NHN Cloud internal use and are subject to change without notice.
