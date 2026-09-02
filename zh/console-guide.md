@@ -1,3 +1,12 @@
+{% set inquiry_host =
+      "www.ngsc.go.kr"       if "ngsc"  in build_flags else
+      "www.ngovc.go.kr"      if "ngovc" in build_flags else
+      "www.ngoic.go.kr"      if "ngoic" in build_flags else
+      "www.ninc.go.kr"       if "ninc"  in build_flags else
+      "www.gov-nhncloud.com" if "gov"   in build_flags else
+      "www.gncloud.go.kr"    if "ncgn"  in build_flags else
+      "www.nhncloud.com" -%}
+
 ## Network > Private DNS > Console Usage Guide
 
 ### Create Private DNS Zone 
@@ -79,7 +88,7 @@ You can manage the record sets of the selected DNS Zone from **Private DNS** scr
 
 5. The number of record sets to be created is limited, please contact us if you need an extension. 
 
-    - Contact Us: Customer Center > [1:1 Inquiry](https://www.nhncloud.com/kr/support/inquiry)
+    - Contact Us: Customer Center > [1:1 Inquiry](https://$[ inquiry_host ]$/kr/support/inquiry)
 
 ### Bulk Create Record Sets
 
