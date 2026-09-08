@@ -1,4 +1,15 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=50489d584d37 -->
+
+{% set inquiry_host =
+      "www.ngsc.go.kr"       if "ngsc"  in build_flags else
+      "www.ngovc.go.kr"      if "ngovc" in build_flags else
+      "www.ngoic.go.kr"      if "ngoic" in build_flags else
+      "www.ninc.go.kr"       if "ninc"  in build_flags else
+      "www.gov-nhncloud.com" if "gov"   in build_flags else
+      "www.gncloud.go.kr"    if "ncgn"  in build_flags else
+      "www.nhncloud.com" -%}
 
 <a id="network-private-dns-console-usage-guide"></a>
 ## Network > Private DNS > コンソール使用ガイド { #network-private-dns-console-usage-guide }
@@ -10,14 +21,15 @@
 
 2. **Private DNS Zone名**と**説明**を入力し、VPCを選択して**確認**ボタンをクリックします。 
 
-    - **Private DNS Zone名**にユーザーが所有しているドメインまたはサブドメインをFQDN(full qualified domain name)に入力します。
-    - **Private DNS Zone名**は、接続されたVPC内で唯一でなければなりません。
-    - 複数のVPCを選択できます。画面右側の**+**ボタンをクリックしてVPCを追加することができ、追加したVPCの**-**ボタンをクリックしてVPCを削除できます。
-    - Private DNS ZoneのVPCの最小接続数は1つで、最大接続数は制限がありません。
-    - 作成が完了すると、Private DNSサービスを利用するために接続されたVPCのインスタンスはネームサーバをプライベートDNSポートIPに変更する必要があります。
-      - インスタンスを再起動すると、インスタンスのネームサーバがプライベートDNSポートIPに設定されます。
-    - 基本的に作成されるレコードセットは[レコードセット管理](./console-guide/#_1)で確認できます。
-    - 一つ以上のZoneに接続されたVPCは、プライベートIP DNS設定をしなくてもプライベートIP DNSを使用できます。
+- **[Private DNS Zone 名]** に、ユーザーが所有するドメインまたはサブドメインを FQDN（fully qualified domain name）で入力します。
+    - **[Private DNS Zone 名]** は、接続された VPC 内で一意である必要があります。
+    - 複数の VPC を選択できます。画面右の **[+]** ボタンをクリックして VPC を追加でき、追加された VPC の **[-]** ボタンをクリックして VPC を削除できます。
+    - Private DNS Zone に接続できる VPC の最小数は 1 個で、最大数に制限はありません。
+    - 作成が完了したら、Private DNS サービスを利用するために、接続された VPC のインスタンスはネームサーバーをプライベートDNSポート IP に変更する必要があります。
+      - インスタンスを再起動すると、インスタンスのネームサーバーがプライベートDNSポート IP に設定されます。
+      - 再起動せずにネームサーバーを変更するには、インスタンスに接続してネームサーバーをプライベートDNSポート IP に指定する必要があります。OS ごとのネームサーバー設定方法に従って変更を行います。
+    - デフォルトで作成されるレコードセットは、[レコードセット管理](#manage-record-sets) で確認できます。
+    - 1 つ以上の Zone に接続された VPC は、プライベートIP DNS の設定を行わなくても、プライベートIP DNS を使用できます。
 
 > [参考]プライベートDNSポート
 > * プライベートIP DNSを設定したり、VPCを初めてZoneに接続すると、VPC内にプライベートDNSポートが作成されます。
@@ -86,7 +98,7 @@
 
 5. レコードセットの作成数は制限されており、延長が必要な場合は別途お問い合わせください。
 
-    - お問い合わせ先：[1:1お問い合わせ](https://www.nhncloud.com/kr/support/inquiry)
+- お問い合わせ先: カスタマーセンター > [1:1お問い合わせ](https://$[ inquiry_host ]$/kr/support/inquiry)
 
 <a id="bulk-create-record-sets"></a>
 ### レコードセット大量作成 { #bulk-create-record-sets }

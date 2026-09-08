@@ -1,15 +1,53 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=797776c94fa3 -->
+
+{% if "gov" in build_flags -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "-gov" -%}
+  {%- set region_names   = "韓国(板橋)リージョン" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gov-nhncloudservice.com" -%}
+{%- elif "ncgn" in build_flags -%}
+  {%- set identity_env   = "ncgn" -%}
+  {%- set region_names   = "韓国(板橋)リージョン" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gncloud.go.kr" -%}
+{%- elif "ngsc" in build_flags -%}
+  {%- set identity_env   = "ngsc" -%}
+  {%- set region_names   = "韓国(大邱)リージョン" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngsc.go.kr" -%}
+{%- elif "ngovc" in build_flags -%}
+  {%- set identity_env   = "ngovc" -%}
+  {%- set region_names   = "韓国(大邱)リージョン" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngovc.com" -%}
+{%- elif "ngoic" in build_flags -%}
+  {%- set identity_env   = "ngoic" -%}
+  {%- set region_names   = "韓国(大邱)リージョン" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngoic.com" -%}
+{%- elif "ninc" in build_flags -%}
+  {%- set identity_env   = "ninc" -%}
+  {%- set region_names   = "韓国(大邱)リージョン" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ninc.go.kr" -%}
+{%- else -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "" -%}
+  {%- set region_names   = "韓国(板橋)リージョン<br>韓国(坪村)リージョン<br>韓国(光州)リージョン" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com" -%}
+{%- endif -%}
 
 <a id="network-private-dns-api-v2-guide"></a>
 ## Network > Private DNS > API v2ガイド { #network-private-dns-api-v2-guide }
 
-NHN Cloud Networkサービスは、API呼び出し時の認証/認可のためにIaaSトークンを使用します。IaaSトークンは、NHN CloudのOpenStackベースのインフラサービス(IaaS)で使用する認証トークンです。IaaSトークンの発行及び使用に関する詳細は、[IaaSトークン](/nhncloud/ja/public-api/iaas-token)を参照してください。
+{% if identity_env -%}
+API を使用するには、API エンドポイントとトークンなどが必要です。[API 使用準備](/Compute/Compute/ja/identity-api-$[ identity_env ]$/) を参照して、API の使用に必要な情報を準備します。
+{%- else -%}
+NHN Cloud Network サービスは、API 呼び出し時の認証/認可に IaaS トークンを使用します。IaaS トークンは、NHN Cloud の OpenStack ベースのインフラサービス (IaaS) で使用する認証トークンです。IaaS トークンの発行および使用の詳細については、[IaaS トークン](/nhncloud/ja/public-api/iaas-token$[ token_suffix ]$) を参照してください。
+{%- endif %}
 
 Private DNS Zoneとレコードセットは`network`タイプエンドポイントを利用します。正確なエンドポイントはトークン発行レスポンスの`serviceCatalog`を参照します。
 
 | タイプ | リージョン | エンドポイント |
 |---|---|---|
-| network | 韓国(パンギョ)リージョン<br>韓国(ピョンチョン)リージョン<br>韓国(光州)リージョン | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com |
+| network | $[ region_names ]$ | $[ region_urls ]$ |
 
 
 APIレスポンスにガイドに記載されていないフィールドが表示される場合があります。このようなフィールドは、NHN Cloudの内部用途に使用され、事前告知なしに変更される可能性があるため、使用しないでください。

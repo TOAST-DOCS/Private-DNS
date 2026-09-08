@@ -1,5 +1,14 @@
 <!-- pre-align:aligned sig=50489d584d37 -->
 
+{% set inquiry_host =
+      "www.ngsc.go.kr"       if "ngsc"  in build_flags else
+      "www.ngovc.go.kr"      if "ngovc" in build_flags else
+      "www.ngoic.go.kr"      if "ngoic" in build_flags else
+      "www.ninc.go.kr"       if "ninc"  in build_flags else
+      "www.gov-nhncloud.com" if "gov"   in build_flags else
+      "www.gncloud.go.kr"    if "ncgn"  in build_flags else
+      "www.nhncloud.com" -%}
+
 <a id="network-private-dns-console-usage-guide"></a>
 ## Network > Private DNS > 콘솔 사용 가이드 { #network-private-dns-console-usage-guide }
 
@@ -17,7 +26,7 @@
     - 생성이 완료되면 Private DNS 서비스를 이용하기 위해 연결된 VPC의 인스턴스들은 네임서버를 프라이빗 DNS 포트 IP로 변경해야 합니다.
       - 인스턴스를 재시작하면 인스턴스의 네임서버가 프라이빗 DNS 포트 IP로 설정됩니다.
       - 재시작 없이 네임서버를 변경하려면 인스턴스에 접속하여 네임서버를 프라이빗 DNS 포트 IP로 지정해야 합니다. 운영체제별로 네임서버를 설정하는 방법에 따라 변경을 진행합니다.
-    - 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](./console-guide/#_1)에서 확인할 수 있습니다.
+    - 기본으로 생성되는 레코드 세트는 [레코드 세트 관리](#manage-record-sets)에서 확인할 수 있습니다.
     - 한 개 이상의 Zone에 연결된 VPC는 프라이빗 IP DNS 설정을 하지 않더라도 프라이빗 IP DNS를 사용할 수 있습니다.
 
 > [참고] 프라이빗 DNS 포트
@@ -87,7 +96,7 @@
 
 5. 레코드 세트 생성 개수는 제한되어 있으며 연장이 필요한 경우 별도로 문의해 주시기 바랍니다. 
 
-    - 문의처: 고객 센터 > [1:1 문의](https://www.nhncloud.com/kr/support/inquiry)
+    - 문의처: 고객 센터 > [1:1 문의](https://$[ inquiry_host ]$/kr/support/inquiry)
 
 <a id="bulk-create-record-sets"></a>
 ### 레코드 세트 대량 생성 { #bulk-create-record-sets }

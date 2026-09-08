@@ -1,15 +1,51 @@
 <!-- pre-align:aligned sig=797776c94fa3 -->
 
+{% if "gov" in build_flags -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "-gov" -%}
+  {%- set region_names   = "한국(판교) 리전" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gov-nhncloudservice.com" -%}
+{%- elif "ncgn" in build_flags -%}
+  {%- set identity_env   = "ncgn" -%}
+  {%- set region_names   = "한국(판교) 리전" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gncloud.go.kr" -%}
+{%- elif "ngsc" in build_flags -%}
+  {%- set identity_env   = "ngsc" -%}
+  {%- set region_names   = "한국(대구) 리전" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngsc.go.kr" -%}
+{%- elif "ngovc" in build_flags -%}
+  {%- set identity_env   = "ngovc" -%}
+  {%- set region_names   = "한국(대구) 리전" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngovc.com" -%}
+{%- elif "ngoic" in build_flags -%}
+  {%- set identity_env   = "ngoic" -%}
+  {%- set region_names   = "한국(대구) 리전" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngoic.com" -%}
+{%- elif "ninc" in build_flags -%}
+  {%- set identity_env   = "ninc" -%}
+  {%- set region_names   = "한국(대구) 리전" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ninc.go.kr" -%}
+{%- else -%}
+  {%- set identity_env   = "" -%}
+  {%- set token_suffix   = "" -%}
+  {%- set region_names   = "한국(판교) 리전<br>한국(평촌) 리전<br>한국(광주) 리전" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com" -%}
+{%- endif -%}
+
 <a id="network-private-dns-api-v2-guide"></a>
 ## Network > Private DNS > API v2 가이드 { #network-private-dns-api-v2-guide }
 
-NHN Cloud Network 서비스는 API 호출 시 인증/인가를 위해 IaaS 토큰을 사용합니다. IaaS 토큰은 NHN Cloud의 OpenStack 기반 인프라 서비스(IaaS)에서 사용하는 인증 토큰입니다. IaaS 토큰 발급 및 사용에 대한 자세한 내용은 [IaaS 토큰](/nhncloud/ko/public-api/iaas-token)을 참고하세요.
+{% if identity_env -%}
+API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api-$[ identity_env ]$/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
+{%- else -%}
+NHN Cloud Network 서비스는 API 호출 시 인증/인가를 위해 IaaS 토큰을 사용합니다. IaaS 토큰은 NHN Cloud의 OpenStack 기반 인프라 서비스(IaaS)에서 사용하는 인증 토큰입니다. IaaS 토큰 발급 및 사용에 대한 자세한 내용은 [IaaS 토큰](/nhncloud/ko/public-api/iaas-token$[ token_suffix ]$)을 참고하세요.
+{%- endif %}
 
 Private DNS Zone과 레코드 세트는 `network` 타입 엔드포인트를 이용합니다. 정확한 엔드포인트는 토큰 발급 응답의 `serviceCatalog`를 참조합니다.
 
 | 타입 | 리전 | 엔드포인트 |
 |---|---|---|
-| network | 한국(판교) 리전<br>한국(평촌) 리전<br>한국(광주) 리전| https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com |
+| network | $[ region_names ]$ | $[ region_urls ]$ |
 
 
 API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니다. 이런 필드는 NHN Cloud 내부 용도로 사용하며 사전 공지 없이 변경될 수 있으므로 사용하지 않습니다.

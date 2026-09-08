@@ -1,3 +1,26 @@
+{% if "gov" in build_flags -%}
+  {%- set region_names   = "Korea (Pangyo) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gov-nhncloudservice.com" -%}
+{%- elif "ncgn" in build_flags -%}
+  {%- set region_names   = "Korea (Pangyo) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.gncloud.go.kr" -%}
+{%- elif "ngsc" in build_flags -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngsc.go.kr" -%}
+{%- elif "ngovc" in build_flags -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngovc.com" -%}
+{%- elif "ngoic" in build_flags -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ngoic.com" -%}
+{%- elif "ninc" in build_flags -%}
+  {%- set region_names   = "Korea (Daegu) Region" -%}
+  {%- set region_urls    = "https://kr4-api-network-infrastructure.ninc.go.kr" -%}
+{%- else -%}
+  {%- set region_names   = "Korea (Pangyo) Region<br>Korea (Pyeongchon) Region<br>Korea (Gwangju) Region" -%}
+  {%- set region_urls    = "https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com" -%}
+{%- endif -%}
+
 ## Network > Private DNS > API v2 Guide
 
 To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/zh/identity-api/) to prepare the information required to use the API.
@@ -6,7 +29,7 @@ Private DNS zones and recordsets use the endpoints of the `network` type. See th
 
 | Type | Region | Endpoint |
 |---|---|---|
-| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region<br>Korea (Gwangju) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://kr3-api-network-infrastructure.nhncloudservice.com |
+| network | $[ region_names ]$ | $[ region_urls ]$ |
 
 
 Fields not specified in the guide may appear in the API response. Do not use these fields as they are for NHN Cloud internal use and are subject to change without notice.
