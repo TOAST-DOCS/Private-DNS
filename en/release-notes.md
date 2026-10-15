@@ -1,5 +1,7 @@
 <!-- machine_translated: true -->
 
+<!-- pre-align:aligned sig=2b32105a1fdb -->
+
 ## Network > Private DNS > Release Notes
 
 ### May 27, 2025
