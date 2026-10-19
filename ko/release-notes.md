@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=2b32105a1fdb -->
+
 ## Network > Private DNS > 릴리스 노트
 
 ### 2025. 05. 27.
